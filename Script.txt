@@ -9,8 +9,11 @@ set "content="
 for /f "delims=" %%x in (Tr_name.txt) do (
 
   set "content=%%x"
-  tp addtobuffer !content! ECP U01268 client=100 pf=\\SAMECPCI\sapmnt\trans\bin\TP_DOMAIN_ECP.PFL
-  tp import !content! ECP U01268 client=100 pf=\\SAMECPCI\sapmnt\trans\bin\TP_DOMAIN_ECP.PFL
+
+  tp addtobuffer !content! <SID> U128 client=100 pf=<Transport Profile Path>
+
+  tp import !content! <SID> U128 client=100 pf=<Transport Profile path>
+
 echo .........................................................................................
 	
 
